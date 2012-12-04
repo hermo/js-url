@@ -31,9 +31,9 @@ jQuery.extend(
 		else if(arg[0] === '.')
 		{
 			arg = arg.substring(1);
-			if($.isNumeric(arg)) {arg = parseInt(arg); return _hs[arg < 0 ? _hs.length + arg : arg-1] || ''; }
+			if($.isNumeric(arg)) {arg = parseInt(arg, 10); return _hs[arg < 0 ? _hs.length + arg : arg-1] || ''; }
 		}
-		else if($.isNumeric(arg)){ arg = parseInt(arg); return _ps[arg < 0 ? _ps.length - 1 + arg : arg] || ''; }
+		else if($.isNumeric(arg)){ arg = parseInt(arg, 10); return _ps[arg < 0 ? _ps.length - 1 + arg : arg] || ''; }
 		else if(arg === 'file') return _ps.slice(-1)[0];
 		else if(arg === 'filename') return _ps.slice(-1)[0].split('.')[0];
 		else if(arg === 'fileext') return _ps.slice(-1)[0].split('.')[1] || '';
